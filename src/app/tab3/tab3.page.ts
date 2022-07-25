@@ -32,6 +32,10 @@ export class Tab3Page {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.callStatistics();
+  }
+
+  callStatistics(){
     this.myAnimals = JSON.parse(JSON.stringify(this.animalServiceanimal.myAnimals)); 
 
     setTimeout(() => {
@@ -42,7 +46,11 @@ export class Tab3Page {
       this.pieChartDatasets = [ {
         data: [ sanos, enfermos ]
       } ]
-    }, 2000)
+    }, 1000)
+  }
+
+  refresh(){
+    this.callStatistics();
   }
 
   
