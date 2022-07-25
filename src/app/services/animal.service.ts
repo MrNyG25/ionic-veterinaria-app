@@ -31,7 +31,7 @@ export class AnimalService {
       id: "k34kj34k34k5345k4477",
       name: "Vaca 2",
       isHealth: false,
-      imageUrl: "assets/cow.jpg",
+      imageUrl: "assets/cow2.jpg",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       diseases: [
         {
@@ -44,7 +44,7 @@ export class AnimalService {
       id: "8j8k768j67kh77h",
       name: "Vaca 6",
       isHealth: true,
-      imageUrl: "assets/cow.jpg",
+      imageUrl: "assets/cow3.jpeg",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       diseases: []
     },
@@ -60,7 +60,7 @@ export class AnimalService {
       id: "sdfsdfsd33423j",
       name: "Vaca 8",
       isHealth: true,
-      imageUrl: "assets/cow.jpg",
+      imageUrl: "assets/cow2.jpg",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       diseases: []
     }
