@@ -17,7 +17,7 @@ export class AddAnimalPage implements OnInit {
   formGroup = new FormGroup({
     name: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
-    diseases: new FormControl('', Validators.required)
+    diseases: new FormControl('',)
   });
   
   constructor(
@@ -56,15 +56,19 @@ export class AddAnimalPage implements OnInit {
   }
 
   getDiseases(){
+
     let diseases = this.formGroup.value.diseases;
-    let arr = diseases.split(',');
     let res = []
-    arr.forEach((e) => {
-      res.push({
-        id: 'id_'+(new Date()).getTime(),
-        name: e
-      })
-    });
+    if(diseases){
+
+      let arr = diseases.split(',');
+      arr.forEach((e) => {
+        res.push({
+          id: 'id_'+(new Date()).getTime(),
+          name: e
+        })
+      });
+    }
     return res;
   }
 
