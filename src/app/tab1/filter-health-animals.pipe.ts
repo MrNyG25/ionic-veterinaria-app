@@ -6,7 +6,7 @@ import { Animal } from '../interfaces/animal.interface';
 })
 export class FilterHealthAnimalsPipe implements PipeTransform {
 
-  transform(animals: Animal[], healthAnimals: boolean): unknown {
+  transform(animals: Animal[], healthAnimals: boolean): Animal[] {
     return animals.filter(e => e.isHealth === healthAnimals);
   }
 
