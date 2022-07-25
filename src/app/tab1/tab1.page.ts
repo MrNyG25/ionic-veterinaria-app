@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Animal } from '../interfaces/animal.interface';
+import { AnimalService } from '../services/animal.service';
 
 @Component({
   selector: 'app-tab1',
@@ -6,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-
-  constructor() {}
+  myAnimals: Animal[] = this.animalService.myAnimals;
+  constructor(private animalService: AnimalService) {
+    //console.log(this.animalService.myAnimals)
+  }
 
 }

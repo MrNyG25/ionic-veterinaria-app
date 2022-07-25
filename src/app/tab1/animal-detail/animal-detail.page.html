@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Animal No 123</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img [src]="myAminal.imageUrl" />
+    <ion-card-header>
+      <ion-card-subtitle>Id Unico {{myAminal.id}}</ion-card-subtitle>
+      <ion-card-title>{{myAminal.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{myAminal.description}}
+    </ion-card-content>
+    
+    
+  </ion-card>
+  <h2 style="margin-left: 6px;">Enfermedades</h2>
+  <ng-container *ngIf="myAminal.diseases?.length == 0; else elseTemplate">
+    <ion-chip >
+      <ion-label>Animal sano</ion-label>
+    </ion-chip>
+  </ng-container>
+  <ng-template #elseTemplate>
+    
+    <ion-chip *ngFor="let disease of myAminal.diseases">
+      <ion-label>{{disease.name}}</ion-label>
+    </ion-chip>
+  </ng-template>
+  
+</ion-content>
