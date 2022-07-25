@@ -30,7 +30,9 @@ export class LoginPage implements OnInit {
   login(){
     console.log(this.loginForm.value)
     if(this.loginService.isValidEmail(this.loginForm.value.email)){
+      this.loginService.userLogged = this.loginService.getUserByEmail(this.loginForm.value.email);
       this.router.navigate(['home'])
+      this.loginService.newUserEmmit(true);
     }else{
       this.presentToast()
     }
