@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Animal } from '../interfaces/animal.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalService {
+
+  public  newAnimalSubject = new BehaviorSubject<boolean>(false);
+  refreshAnimals$ = this.newAnimalSubject.asObservable();
+  
   myAnimals: Animal[] = [
     {
       id: "8234j238423n4hg5",
@@ -67,7 +72,12 @@ export class AnimalService {
   ]
   constructor() { }
 
+  newAnimalEmmit(value: boolean){
+    this.newAnimalSubject.next(value);
+  }
+
   getAnimalById(id: string): Animal{
     return this.myAnimals.filter(e => e.id === id)[0];
   }
+
 }

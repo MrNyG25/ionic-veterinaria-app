@@ -13,7 +13,13 @@
     </ion-toolbar>
   </ion-header>
 
+
+  <ion-button  [routerLink]="['add-animal']" color="success">
+    Agregar nuevo 
+    <ion-icon slot="end" name="add"></ion-icon>
+  </ion-button>
   <ion-list>
+
     <ion-list-header> Animales sanos </ion-list-header>
     <ion-item [routerLink]="['animal-detail', animal.id]" *ngFor="let animal of myAnimals | filterHealthAnimals:true" >
       <ion-avatar slot="start">
@@ -37,7 +43,7 @@
         <p>{{animal.description}}</p>
       </ion-label>
     </ion-item>
-    <!-- {{myAnimals | json}} -->
+
     <!-- <ion-list-header> Animales sanos </ion-list-header>
 
     <ion-item [routerLink]="['animal-detail']"  >

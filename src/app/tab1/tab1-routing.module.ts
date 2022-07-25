@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'animal-detail/:id',
     loadChildren: () => import('./animal-detail/animal-detail.module').then( m => m.AnimalDetailPageModule)
+  },
+  {
+    path: 'add-animal',
+    loadChildren: () => import('./add-animal/add-animal.module').then( m => m.AddAnimalPageModule)
   }
 ];
 

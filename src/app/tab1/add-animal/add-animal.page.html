@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Animal nuevo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formGroup" (ngSubmit)="crearAnimal()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-text color="primary">
+            <h4>Datos generales</h4>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-item>
+            <ion-label position="floating">Nombre</ion-label>
+            <ion-input type="text" formControlName="name"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" size-sm>
+          <ion-item>
+            <ion-label position="floating">Descripción</ion-label>
+            <ion-textarea formControlName="description" placeholder="Observaciones..."></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-item>
+            <ion-label>¿Es un animal sano?</ion-label>
+            <ion-toggle slot="end" mode="ios" name="blueberry" (ionChange)="handleIsHealth($event)" color="success"></ion-toggle>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" size-sm>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-sm>
+          <ion-text color="primary">
+            <h4>Datos enfermedades</h4>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" size-sm>
+
+          <ion-item>
+            <ion-label position="floating">Escriba las enfermedades separadas por una (,)</ion-label>
+            <ion-textarea formControlName="diseases" placeholder="fiebre,carbon"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button type="submit" class="ion-margin-bottom" expand="block"  color="success">Agregar</ion-button>
+  </form>
+</ion-content>
